@@ -17,13 +17,15 @@ def feedback(word, guess_count):
 		if word + "\n" not in check:
 			print("ongeldig woord")
 			guess_count += 1
-			print(guess_count)
 			return guess_count
 	
 	if word + "\n" == sel_word:
 		exit("goed gedaan!")
 
 	# werkt nog niet voor rood en geel
+	# oplossing: stop feedback in list
+	# functie die list showt, zoals bij echt lingo
+
 	for index in range(len(word)):
 		if word[index] == sel_word[index]:
 			print(word[index] + ":" + "g")
@@ -33,7 +35,6 @@ def feedback(word, guess_count):
 			print(word[index])
 	print("--------")
 	guess_count += 1
-	print(guess_count)
 	return guess_count
 
 if __name__ == "__main__":
@@ -46,7 +47,6 @@ if __name__ == "__main__":
 		print(sel_word[0])
 		beurt = input("")
 		guess_count = feedback(beurt, guess_count)
-		print(guess_count)
 	
 	print("goed geprobeerd")
 
